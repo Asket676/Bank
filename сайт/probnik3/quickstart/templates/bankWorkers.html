@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'probnik3/css/style.css' %}">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+
+        <span>Фамилия</span>{{form.surname}} <br>
+        <span>Имя</span>{{form.name}} <br>
+        <span>Отчество</span>{{form.secondName}} <br>
+        <span>Должность</span>{{form.job}}<br>
+        <span>Зарплата</span>{{form.salary}}
+        <span>{{error}}</span><br>
+        <button class="" type="submit">Добавить</button>
+    </form>
+    <a href=""><button>Обновить</button></a>
+    <a href=""><button>Удалить</button></a>
+    <a href="/"><button>Назад</button></a>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'probnik3/css/style.css' %}">
+</head>
+<body>
+    <!-- {{data}}
+    {%for i in data%}
+    {{i}}
+    <br>
+    {%endfor%} -->
+    <div class="infocontainer">
+    <span class="infohead">Клиенты банка</span><br>
+    {%for i in all_BankClients%}
+    <span class="info">{{i.surname}}</span>
+    <span class="info">{{i.name}}</span>
+    <span class="info">{{i.secondName}}</span>
+    <br>
+    {%endfor%}
+    <a href="bankClients"><button>Внести данные</button></a>
+    </div>
+    <br><br>
+    <div class="infocontainer">
+    <span class="infohead">Работники банка</span><br>
+    {%for i in all_BankWorkers%}
+    <span class="info">{{i.surname}}</span>
+    <span class="info">{{i.name}}</span>
+    <span class="info">{{i.secondName}}</span>
+    <span class="info">{{i.job}}</span>
+    <span class="info">{{i.salary}}</span>
+    <br>
+    {%endfor%}
+    <a href="bankWorkers"><button>Внести данные</button></a>
+    </div>
+    <br><br>
+    <div class="infocontainer">
+    <span class="infohead">Виды вкладов</span><br>
+    {%for i in all_InvestType%}
+    <span class="info">{{i.id}}</span>
+    <span class="info">{{i.name}}</span>
+    <span class="info">{{i.minTime}}</span>
+    <span class="info">{{i.minAmount}}</span>
+    <span class="info">{{i.code}}</span>
+    <span class="info">{{i.percent}}</span>
+    <br>
+    {%endfor%}
+    <a href="investType"><button>Внести данные</button></a>
+    </div>
+    <br><br>
+    <div class="infocontainer">
+        <span class="infohead">Курс валют</span><br>
+    {%for i in all_MoneyCourse%}
+    <span class="info">{{i.name}}</span>
+    <span class="info">{{i.course}}</span>
+    <br>
+    {%endfor%}
+    <a href="moneyCourse"><button>Внести данные</button></a>
+    </div>
+    <br><br>
+    <div class="infocontainer">
+        <span class="infohead">Регистрация вкладов</span><br>
+    {%for i in all_InvestRegist%}
+    <span class="info">{{i.client}}</span>
+    <span class="info">{{i.code}}</span>
+    <span class="info">{{i.dateIn}}</span>
+    <span class="info">{{i.dateOut}}</span>
+    <span class="info">{{i.amount}}</span>
+    <span class="info">{{i.status}}</span>
+    <span class="info">{{i.worker}}</span>
+    <br>
+    {%endfor%}
+    <a href="investRegist"><button>Внести данные</button></a>
+    </div>
+</body>
+</html>
